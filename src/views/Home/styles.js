@@ -42,4 +42,6 @@ export const SubmitButtonText = styled.Text``;
 export const List = styled.FlatList.attrs({
   contentContainerStyle: { paddingHorizontal: 20 },
   showsVerticalScrollIndicator: false,
-})``;
+})`
+  margin-top: 20px;
+`;

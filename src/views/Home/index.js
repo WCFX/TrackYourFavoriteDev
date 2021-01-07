@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import Repository from '../../components/Repository';
+import UserCard from '../../components/UserCard';
 
 import {
   Container,
@@ -30,9 +30,21 @@ const Home = () => (
     </Form>
 
     <List
-      data={[]}
+      data={[
+        {
+          id: 1,
+          name: 'Wagner',
+          login: 'wcfx',
+          avatar_url: 'https://github.com/wcfx.png',
+          location: 'Canoas',
+          url: 'https://api.github.com/users/wcfx',
+          public_repos: 2,
+          followers: 20,
+          following: 0,
+        },
+      ]}
       keyExtractor={(item) => String(item.id)}
-      renderItem={({ item }) => <Repository data={item} />}
+      renderItem={({ item }) => <UserCard data={item} />}
     />
   </Container>
 );
