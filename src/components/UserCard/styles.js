@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
+  background-color: rgba(14, 0, 189, 0.1);
   border-radius: 6px;
   height: 200px;
   padding: 20px;
@@ -13,33 +14,23 @@ export const ContainerImg = styled.View`
 `;
 
 export const AvatarImg = styled.Image`
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50px;
-  border-color: #2c9454;
+  border-color: #32a871;
   border-width: 2px;
 `;
 
 export const ContainerInfo = styled.View`
   justify-content: space-between;
+  width: 60%;
 `;
 
-export const Name = styled.Text`
+export const InfoUser = styled.Text`
   font-size: 16px;
   color: #fff;
+  letter-spacing: 1px;
+  font-family: Nunito-Regular;
 `;
 
-export const LoginUser = styled.Text`
-  font-size: 16px;
-  color: #fff;
-`;
-
-export const Location = styled.Text`
-  font-size: 16px;
-  color: #fff;
-`;
-
-export const OtherInfos = styled.Text`
-  font-size: 16px;
-  color: #fff;
-`;
+export const ButtonSocialMedia = styled.TouchableOpacity``;

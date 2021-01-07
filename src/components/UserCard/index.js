@@ -1,14 +1,13 @@
 import React from 'react';
+import Icon from 'react-native-vector-icons/AntDesign';
 import { Text } from 'react-native';
 import {
   Container,
   ContainerImg,
   AvatarImg,
   ContainerInfo,
-  Name,
-  LoginUser,
-  Location,
-  OtherInfos,
+  InfoUser,
+  ButtonSocialMedia,
 } from './styles';
 
 const UserCard = ({ data }) => (
@@ -17,31 +16,30 @@ const UserCard = ({ data }) => (
       <AvatarImg source={{ uri: data.avatar_url }} />
     </ContainerImg>
     <ContainerInfo>
-      <Name>
+      <InfoUser>
         <Text style={{ fontWeight: 'bold' }}>Nome:</Text> {data.name}
-      </Name>
-      <LoginUser>
-        {' '}
-        <Text style={{ fontWeight: 'bold' }}>Login:</Text> {data.login}
-      </LoginUser>
-      <Location>
-        {' '}
+      </InfoUser>
+      <InfoUser>
+        <Text style={{ fontWeight: 'bold' }}>Usuário:</Text> {data.login}
+      </InfoUser>
+      <InfoUser>
         <Text style={{ fontWeight: 'bold' }}>Localização:</Text> {data.location}
-      </Location>
-      <OtherInfos>
-        {' '}
-        <Text style={{ fontWeight: 'bold' }}>Repositórios:</Text>{' '}
+      </InfoUser>
+      <InfoUser>
+        <Text style={{ fontWeight: 'bold' }}>Repositórios: </Text>
         {data.public_repos}
-      </OtherInfos>
-      <OtherInfos>
-        {' '}
+      </InfoUser>
+      <InfoUser>
         <Text style={{ fontWeight: 'bold' }}>Seguidores:</Text> {data.followers}
-      </OtherInfos>
-      <OtherInfos>
-        {' '}
+      </InfoUser>
+      <InfoUser>
         <Text style={{ fontWeight: 'bold' }}>Seguindo:</Text> {data.following}
-      </OtherInfos>
+      </InfoUser>
     </ContainerInfo>
+    <ButtonSocialMedia>
+      <Icon name="github" size={34} color="#f9f9f9" />
+      <Text style={{ marginTop: 10, color: '#f9f9f9' }}>Visite ➞</Text>
+    </ButtonSocialMedia>
   </Container>
 );
 
