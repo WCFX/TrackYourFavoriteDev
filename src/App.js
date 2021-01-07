@@ -6,7 +6,7 @@ import Routes from './routes';
 
 export default () => (
   <NavigationContainer>
-    <StatusBar backgroundColor="#715abf" />
+    <StatusBar backgroundColor="#7162a6" />
     <Routes />
   </NavigationContainer>
 );

@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
+import { StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 export const Container = styled(LinearGradient).attrs({
-  colors: ['#7159c1', '#32a871'],
+  colors: ['#7159c1', '#5cad87'],
   start: { x: 0, y: 0 },
   end: { x: 1, y: 1 },
 })`
@@ -25,14 +26,16 @@ export const Form = styled.View`
 `;
 export const Input = styled.TextInput`
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border-width: ${StyleSheet.hairlineWidth}px;
+  border-color: #fff;
   width: 80%;
   padding: 10px;
   font-size: 16px;
   color: #fff;
 `;
 export const SubmitButton = styled.TouchableOpacity`
-  border: 1px solid #ccc;
+  border-width: ${StyleSheet.hairlineWidth}px;
+  border-color: #fff;
   border-radius: 6px;
   margin-right: 10px;
   padding: 10px;

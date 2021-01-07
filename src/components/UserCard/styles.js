@@ -1,7 +1,10 @@
+import { StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
+  border-width: ${StyleSheet.hairlineWidth}px;
+  border-color: #fff;
   background-color: rgba(14, 0, 189, 0.1);
   border-radius: 6px;
   height: 200px;
@@ -17,7 +20,8 @@ export const AvatarImg = styled.Image`
   width: 100px;
   height: 100px;
   border-radius: 50px;
-  border-color: #32a871;
+  border-color: #5cad87;
+
   border-width: 2px;
 `;
 
