@@ -15,12 +15,12 @@ import {
 
 const Home = () => (
   <Container>
-    <Title>Encontre o seu Dev Favorito</Title>
+    <Title>Localize o seu Dev Favorito</Title>
     <Form>
       <Input
         autoCapitalize="none"
         placeholderTextColor="#ccc"
-        placeholder="Coloque o nome do dev que procura"
+        placeholder="Digite o usuário do dev que procura"
       />
       <SubmitButton>
         <SubmitButtonText>
