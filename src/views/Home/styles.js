@@ -32,6 +32,7 @@ export const Input = styled.TextInput`
   padding: 10px;
   font-size: 16px;
   color: #fff;
+  border: 1px solid ${(props) => (props.error ? '#F04' : '#ccc')};
 `;
 export const SubmitButton = styled.TouchableOpacity`
   border-width: ${StyleSheet.hairlineWidth}px;

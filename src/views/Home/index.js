@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Keyboard } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api';
@@ -18,6 +18,17 @@ import {
 
 const Home = () => {
   const [input, setInput] = useState('');
+  const [error, setError] = useState(false);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    async function loadUsers() {
+      const realm = await getRealm();
+      const data = realm.objects('UserInfo').sorted('followers', true);
+      setUsers(data);
+    }
+    loadUsers();
+  }, []);
 
   async function handleSaveUserInfo(user) {
     const data = {
@@ -45,9 +56,11 @@ const Home = () => {
       await handleSaveUserInfo(res.data);
 
       setInput('');
+      setError(false);
       Keyboard.dismiss();
-    } catch (error) {
+    } catch (err) {
       console.log('Deu erro');
+      setError(true);
     }
   }
 
@@ -57,6 +70,7 @@ const Home = () => {
       <Form>
         <Input
           value={input}
+          error={error}
           onChangeText={setInput}
           autoCapitalize="none"
           placeholderTextColor="#ccc"
@@ -70,19 +84,7 @@ const Home = () => {
       </Form>
 
       <List
-        data={[
-          {
-            id: 1,
-            name: 'Wagner',
-            login: 'wcfx',
-            avatar_url: 'https://github.com/wcfx.png',
-            location: 'Canoas',
-            html_url: 'https://api.github.com/users/wcfx',
-            public_repos: 2,
-            followers: 20,
-            following: 0,
-          },
-        ]}
+        data={users}
         keyExtractor={(item) => String(item.id)}
         renderItem={({ item }) => <UserCard data={item} />}
       />

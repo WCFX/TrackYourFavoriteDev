@@ -2,7 +2,6 @@ import { StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  /* border: 1px solid #ccc; */
   border-width: ${StyleSheet.hairlineWidth}px;
   border-color: #fff;
   background-color: rgba(14, 0, 189, 0.1);
@@ -10,6 +9,7 @@ export const Container = styled.View`
   height: 200px;
   padding: 20px;
   flex-direction: row;
+  margin-bottom: 10px;
 `;
 
 export const ContainerImg = styled.View`
